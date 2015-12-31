@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>What is the name of this game?</h2>
+<img src="rock2.jpg" height=500 width=500></img>
+
+<script>
+	
+	function shuffle(array) {
+  	var currentIndex = array.length, temporaryValue, randomIndex ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+var arr = [' Rock ', ' Scissor ', ' Paper '];
+shuffle(arr);
+// console.log(arr);
+// alert('true is a : ' + typeof true+ ' ' + arr)		// opens a box
+document.bgColor = "#C1D343" 
+// document.write(Date());
+document.write("<p>" + arr + "</p>")
+
+</script>
+<button style="background-color:transparent" onclick="location.reload()">Really? Is that what you call it?!?</button> 
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- This is a comment -->
+<!-- From http://www.codeproject.com/Articles/755/JavaScript-For-Beginners -->
+<!-- I learned: That it is put in comments to protect against old browsers, why doesn't writeln work?-->
+<!-- Why did alert need to be in body? -->
+
+<!DOCTYPE html>
+<html>
+
+<h2>Basic HTML for importing javascript </h2>
+<script language="Javascript" scr="main.js"></script>
+<script type="text/javascript">
+<!--
+document.writeln("Welcome to my site!" + "<br/>");
+document.writeln("This page was updated: " + document.lastModified+ "<br/>");
+// -->
+</script>
+<script>
+document.bgColor="pink"
+document.fgColor="#336699"
+
+</script>
+<body>
+<script>
+function test(){ document.writeln("The test() function was called")}
+window.alert("Welcome pretty peaches")
+x = window.prompt("Hey Peachy, What is your name?")
+window.alert(x)
+var y =window.confirm("Are you cute?") 
+if (!y)
+  window.location="http://www.yahoo.com"
+
+ // if cancel is pressed go somewhere else 
+test()
+</script>
+ Hi, Pie! </body>
+</html>
