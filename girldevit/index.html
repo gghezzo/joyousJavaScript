@@ -6,28 +6,36 @@
     <body>
     <p>This is my just HTML code.</p>
         <script>
-            var kittenNumber = 3;
-            function turtleFact() {
-                console.log("A turtle\'s lower shell is called a plastron ")
+            function printName(firstName,lastName) {
+                document.write(firstName + " " + lastName); 
+                return (firstName + " " + lastName);
             }
-            function square(num) {
-                return num * num; 
+            printName("Gee", "Dog");
+            var fullName = printName("Gee", "Dog");
+            document.write("The fullname is " + fullName);
+            var temp = Math.random()*100;
+            console.log("temp = ", temp);
+            document.write("<br>");
+            if (temp < 10 || temp > 80) {
+                document.write("stay inside");
             }
-            console.log(square(4));
-            alert('Hello World!');
-            console.log("This is going to the log");
-            console.log('I\'d like to use an apostrophe');
-            var animal = 'duck ';
-            animal += ' and trucks';
-            document.write(animal + '\n');  // This linefeed does not work
-            document.write("<br>");         // this linefeed does 
-            document.write("This is to the page "+ kittenNumber.toString());
-            console.log(kittenNumber);
-            turtleFact();
-            // This is a comment 
-            /* 
-            This is also a comment 
-            */ 
+            else if (temp < 30) {
+                document.write("coat and a hat ");
+            }
+            else if (temp < 50)  {
+                document.write("Wear a Coat");
+            }
+            else {
+                document.write("Wear what you want");
+            }
+            for (i=1; i<=12;i++) {
+                document.write("<br>" + i + "x 9 = " + (i*9));
+            }
+            var food = ['chicken', 'beef'];
+            document.write(food[0]);
+            for (var x=0; x <food.length; x++) {
+                document.write("<br>" + food[x]);
+            }
         </script>
     </body>
 </html>
