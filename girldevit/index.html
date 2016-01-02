@@ -5,11 +5,19 @@
     </head>
     <body>
     <p>This is my just HTML code.</p>
+    <div id="header">
+        <h1>JavaScript Test Site</h1>
+    </div>
         <script>
             function printName(firstName,lastName) {
                 document.write(firstName + " " + lastName); 
                 return (firstName + " " + lastName);
             }
+            var recipe = { title: 'cookie', servings: 10, ingredients: ['sugar', 'eggs', 'butter'] }
+            document.write(recipe.title +" , "+ recipe['servings'] +"<br>");
+            for (var x=0; x <recipe.ingredients.length; x++) 
+                {document.write(recipe.ingredients[x])
+                };
             printName("Gee", "Dog");
             var fullName = printName("Gee", "Dog");
             document.write("The fullname is " + fullName);
@@ -36,6 +44,12 @@
             for (var x=0; x <food.length; x++) {
                 document.write("<br>" + food[x]);
             }
+            var pageNode = document.getElementById('header');
+            console.log("This is pageNode " + pageNode)
+            var newPar = document.createElement('p');
+            var parText = document.createTextNode('This is some text');
+            newPar.appendChild(parText);
+            pageNode.appendChild(newPar);
         </script>
     </body>
 </html>
