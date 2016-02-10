@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- Web app to track exercise progress -->
+<html>
+<body>
+<h2>Daily Progress</h2>
+<p>Note: I will replace this the text below with a github like chart of color Blocks. Like this </p>
+<img src="greendots.png" >
+<table id ="myTable" border="1" cellpadding="7">
+  <tr>
+    <th>Date</th>
+    <th>Score</th>  
+    <th>Comment</th> 
+  </tr>  
+  <tr>
+    <td>February 10,2016</th>
+    <td>0</th>  
+    <td>0</th> 
+  </tr> 
+  <tr>
+    <td>February 9,2016</th>
+    <td>3</th>  
+    <td>cardio, 7 min, happy</th> 
+  </tr> 
+</table>
+ <form>
+  Date:<br>
+  <input id="date" type="text" name="date"><br>
+  <input id="cardio" type="checkbox" name="goals" value="Cardio" checked> 20+ minutes of Cardio<br>
+  <input type="checkbox" name="goals" value="Core" checked> Core: 7 minute or Running<br>
+  <input type="checkbox" name="goals" value="Confction" checked> No Confections<br>
+  <input type="checkbox" name="goals" value="Late Eating" checked> Don't eat after 9pm<br>
+  <input type="checkbox" name="goals" value="Joy" checked> Seek Joy<br>
+  <input type="submit" value="Submit" onclick="changeTableContent();return false;"/>
+
+</form> 
+</body>
+<script type="text/javascript">
+  document.getElementById('date').value = Date();
+</script>
+<script type="text/javascript">
+function changeTableContent(){
+    var x=document.getElementById('myTable').rows
+    var y=x[1].cells
+    var today = new Date()
+    var x = 0
+    x = document.querySelectorAll('input[type="checkbox"]:checked').length
+    y[1].innerHTML= x
+    y[0].innerHTML= today.toLocaleFormat('%d-%b-%Y')
+
+}
+</script>
+</head>
+</html>
