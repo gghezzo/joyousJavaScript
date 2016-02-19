@@ -1,36 +1,20 @@
-// This is Exercise 5 of 13 from http://nodeschool.io/#workshoppers
-// Print the list of files with a particular extention in a directory 
-// argv[2] = name of the directory 
-// argv[3] = file extension to filter by (no .)
-// Print one line per file 
+// This is Exercise 7 of 13 from http://nodeschool.io/#workshoppers
+//  Write a program that performs an HTTP GET request to a URL provided to you
+//  as the first command-line argument. Write the String contents of each
+//  "data" event from the response to a new line on the console (stdout).
+// hint - file:///C:/Users/ginny/AppData/Roaming/npm/node_modules/learnyounode/node_apidoc/http.html#http_http_get_options_callback
 
 var fs = require('fs');
-var path = require('path')
-var directory = process.argv[2];				// I hope this is in the right format
-var ext = '.' + process.argv[3];
-var myList = []
+var path = require('path');
+var directory = process.argv[2];
+var http = require('http');
 
-//console.log('directory = ' + directory);
-//console.log('ext = ' + ext);
-
-fs.readdir(directory, function(err,files) {
-	if (err) throw err;
-	for(var i = 0; i < files.length; i++) {
-		// console.log(files[i])
-		if (path.extname(files[i]) == ext) {
-			myList.push(files[i]);
-			console.log(files[i]);
-		}
-	}
-});
-
-// There Answer 
-// var fs = require('fs')
-//     var path = require('path')
-
-//     fs.readdir(process.argv[2], function (err, list) {
-//       list.forEach(function (file) {
-//         if (path.extname(file) === '.' + process.argv[3])
-//          console.log(file)
-//       })
-//     })
+http.get(directory, function(res) {
+	//console.log(res.statusCode);
+	res.setEncoding('utf8');
+	res.on('data',function(chunk) {
+		console.log(chunk);
+		})
+	}).on('error', function(e) {
+		console.log("Got error: " + e.message); 
+	});
